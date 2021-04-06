@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>견적 요청 - 서비스 선택(유저)</title>
+	<link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="wrap">
+
+
+            <section id="request">
+            
+                <header>
+                    <button id="back-btn" onclick="history.back();"><img src="img/left.png" alt=""></button>
+                    <p>견적요청</p>
+                    <button id="close-btn"><img src="img/exit.png" alt=""></button>
+                </header>
+
+                <canvas id="canvas" width="300" height="15"></canvas>
+
+                <div class="request-agree">
+                    <h2>어떤 서비스 견적을 <br> 받아볼까요?</h2>
+                    
+                    <div class="request-btns">
+                        <label for="repair" class="uncheck">
+                            <img src="img/repair.png" alt="">
+                            <p>내 폰 수리하기</p>
+                        </label>
+                        <label for="sale" class="uncheck">
+                            <img src="img/sale.png" alt="">
+                            <p>내 폰 판매하기</p>
+                        </label>
+                        <label for="buy" class="uncheck">
+                            <img src="img/buy.png" alt="">
+                            <p>중고폰 구매하기</p>
+                        </label>
+                    </div>
+
+                    <input type="radio" class="request-radio" id="repair" name="request-radio" value="repair">
+                    <input type="radio" class="request-radio" id="sale" name="request-radio" value="sale">
+                    <input type="radio" class="request-radio" id="buy" name="request-radio" value="buy">
+
+                    <button id="go-next-agree" class="disagree" disabled onclick="goWhere();">동의하고 진행하기</button>
+                    
+                </div>
+                
+            </section>
+
+        </div>
+    </div>
+
+    
+<script>
+        let how = 10;
+        var canvas = document.getElementById('canvas');
+        canvas.width = canvas.parentElement.scrollWidth;
+        if(canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = "#318AF3";
+            ctx.fillRect(0,0,canvas.width*`${how}`/100,2);
+            ctx.font = '10px sans-serif';
+            ctx.fillText(`${how}%`,canvas.width*`${how}`/100- 10,15);
+        }
+   
+
+    // 약관과 다음진행 버튼체크
+    function check(){
+        $("#go-next-agree").removeClass();
+        $("#go-next-agree").addClass('agree');
+        $("#go-next-agree").attr("disabled", false);
+    }
+
+    $("input[type=radio]").on("change", ()=>{
+        let list = $("input[type=radio]");
+        for(let i = 0; i < list.length; i ++) {
+            console.log($(list).eq(i).is(":checked"));
+            if(!$(list).eq(i).is(":checked")) {
+                $(".request-btns > label").eq(i).removeClass();
+                $(".request-btns > label").eq(i).addClass('uncehck');
+            }else {
+                $(".request-btns > label").eq(i).removeClass();
+                $(".request-btns > label").eq(i).addClass('check');
+            }
+        }
+        check();
+    });
+
+    function goWhere() {
+        let val = $(".request-radio:checked").val();
+        if(val == "repair") {
+            location.href="request_repair_1.html";
+        } else if(val == "sale") {
+            location.href="index.html";
+        }else if (val == "buy") {
+            location.href="index.html";
+        }
+    }
+
+
+    
+
+</script>
+
+</body>
+</html>
+

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>견적 요청 - 내 폰 수리하기(유저)</title>
+	<link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="wrap">
+
+
+            <section id="request">
+            
+                <header>
+                    <button id="back-btn" onclick="history.back();"><img src="img/left.png" alt=""></button>
+                    <p>견적요청</p>
+                    <button id="close-btn"><img src="img/exit.png" alt=""></button>
+                </header>
+
+                <canvas id="canvas" width="300" height="15"></canvas>
+
+                <div class="request-agree">
+                    <h2>수리받을 내 스마트폰 <br> 조회하기.</h2>
+                    
+                    <div class="request-btns">
+                        <div class="request-input-btn">
+                            <h3>IMEI로 조회하기</h3>
+                            <div class="request-hidden">
+                                <h3>IMEI 번호 입력</h3>
+                                <div class="request-input-form">
+                                    <input type="text">
+                                    <button>조회하기</button>
+                                </div>
+                                <p>* IMEI 확인 방법</p>
+                                <p>
+                                    &nbsp;&nbsp;안드로이드 : 설정 > 일반 > 휴대폰 정보 > 상태<br>
+                                    &nbsp;&nbsp;아이폰 : 설정 > 일반 > 정보
+                                </p>
+                            </div>
+                        </div>
+                        <div class="request-input-btn">
+                            <h3>제조사별 제품 조회하기</h3>
+                            <div class="request-hidden">
+                                <div class="request-button-form">
+                                    <button value="apple"></button>
+                                    <button value="samsung"></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <button id="go-next-agree" class="disagree" disabled onclick="location.href='request_repair_1.html'">동의하고 진행하기</button>
+                    
+                </div>
+                
+            </section>
+
+        </div>
+    </div>
+
+    
+<script>
+        let how = 20;
+        var canvas = document.getElementById('canvas');
+        canvas.width = canvas.parentElement.scrollWidth;
+        if(canvas.getContext) {
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = "#318AF3";
+            ctx.fillRect(0,0,canvas.width*`${how}`/100,2);
+            ctx.font = '10px sans-serif';
+            ctx.fillText(`${how}%`,canvas.width*`${how}`/100- 10,15);
+        }
+   
+
+    // 약관과 다음진행 버튼체크
+    function check(){
+        $("#go-next-agree").removeClass();
+        $("#go-next-agree").addClass('agree');
+        $("#go-next-agree").attr("disabled", false);
+    }
+    $(".request-input-btn > h3").on("click",(e)=>{
+        e.target.parentNode.click();
+    })
+    $(".request-input-btn").on("click", (e)=>{
+       
+        if($(e.target).children(".request-hidden").css( 'display')==='none'){
+            $(e.target).children(".request-hidden").show();
+            if($(e.target).siblings().children(".request-hidden").css('display') === 'block'){
+                $(e.target).siblings().children(".request-hidden").hide();
+            }
+        }else {
+            $(e.target).children(".request-hidden").hide();
+        }
+
+    });
+
+   
+    
+
+</script>
+
+</body>
+</html>
+
