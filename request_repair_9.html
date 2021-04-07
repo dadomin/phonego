@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>견적 요청 - 내 폰 수리하기 15</title>
+	<link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="wrap">
+
+
+            <section id="request">
+            
+                <header>
+                    <button id="back-btn" onclick="history.back();"><img src="img/left.png" alt=""></button>
+                    <p>내 폰 수리하기</p>
+                    <button id="close-btn"><img src="img/exit.png" alt=""></button>
+                </header>
+
+                <canvas id="canvas" width="360" height="15"></canvas>
+
+                <div class="request-agree">
+                    <h2>수리 서비스를 받으실<br>지역을 선택해 주세요.</h2>
+                    
+                    <div class="request-notes-form">
+                        <div>
+                            <p>수리 서비스를 받을 지역</p>
+                            <div class="request-input-form">
+                                <input type="text">
+                                <button id="lookup-btn">주소 검색</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    
+                    <button id="go-next-agree" class="agree" onclick="location.href='request_repair_10.html'">다음</button>
+                    
+                </div>
+                
+            </section>
+
+        </div>
+    </div>
+
+    
+<script>
+    let how = 90;
+    var canvas = document.getElementById('canvas');
+    if(canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = "#318AF3";
+        ctx.fillRect(0,0,canvas.width*`${how}`/100,2);
+        ctx.font = '10px Noto Sans KR';
+        ctx.fillText(`${how}%`,canvas.width*`${how}`/100 - 10,13);
+    }
+   
+
+    // 약관과 다음진행 버튼체크
+    function check(){
+        $("#go-next-agree").removeClass();
+        $("#go-next-agree").addClass('agree');
+        $("#go-next-agree").attr("disabled", false);
+    }
+
+    //제품별 클릭시 체크 
+    $("input[name=how]").on("change", (e)=>{
+        let list = document.getElementsByName("how");
+        let idx = $("input[name=how]").index(e.target);
+        if(idx != 12) {
+            $(".request-various-hidden").slideUp();
+        }
+        list.forEach((item, n)=>{
+            if (n == idx) {
+                $(".request-note-btns > label").eq(n).removeClass();
+                $(".request-note-btns > label").eq(n).addClass('check');
+            } else {
+                $(".request-note-btns > label").eq(n).removeClass();
+                $(".request-note-btns > label").eq(n).addClass('uncheck');
+            }
+        });
+    });
+
+
+</script>
+
+</body>
+</html>
+

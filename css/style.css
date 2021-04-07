@@ -871,10 +871,203 @@ input[type=radio] {
     display: none;
 }
 
-.request-variouts-btns {
+.request-various-btns {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: row;
-    
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 36px;
+}
+.request-various-btns > label {
+    width: 49%;
+    height: 50px;
+    border: 1px solid #dce2eb;
+    border-radius: 7px;
+    margin-bottom: 7px;
+    font-size: 11.5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.request-various-btns > label#hidden-form  {
+    flex-direction: column;
+    position: relative;
+    height: auto;
+    padding: 14px;
+    justify-content: flex-start;
+}
+.request-various-btns > label#hidden-form > .request-various-hidden {
+    width: 100%;
+    height: auto;
+    margin-top: 14px;
+}
+.request-various-hidden > p {
+    color: #9f9f9f;
+    margin-bottom: 21px;
+    font-weight: 300;
+}
+.request-various-hidden > input {
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid #dce2eb;
+}
+.request-various-btns > label:last-child {
+    width: 100%;
+}
+.request-various-btns > label.uncheck {
+    border-color: #dce2eb;
+    color: #333;
+}
+.request-various-btns > label.check {
+    color: #318AF3;
+    border-color: #318AF3;
+    font-weight: bold;
+}
+.request-btns.phone-list > label {
+    height: auto;
+    justify-content: flex-start;
+    padding: 12px;
+}
+.request-btns.phone-list > label > .phone-img {
+    width: 64px;
+    height: 64px;
+    overflow: hidden;
+    border: 1px solid #DCE2EB;
+    border-radius: 7px;
+    position: relative;
+    margin-right: 21px;
+}
+.phone-img > img {
+    width: 105%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.request-colors {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: row;
+}
+.request-colors > label {
+    margin-right: 20px;
+    text-align: center;
+}
+.request-colors > label > p {
+    font-size: 13px;
+}
+.color-profile {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 2px solid rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 7px;
+}
+.request-colors > label.check > .color-profile {
+    border-color: #318AF3;
+}
+.color-profile > .color {
+    width: 90%;
+    height: 90%;
+    border: 1px solid #dce2eb;
+    border-radius: 50%;
+}
+.color.white {
+    background-color: #fff;
+}
+.color.black {
+    background-color: #000;
+}
+.color.red {
+    background-color: #CA1010;
+}
+.request-agree > p {
+    font-size: 13px;
+    color: #626262;
+    margin-bottom: 32px;
+}
+.request-agree > .user-color {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #dce2eb;
+    outline: none;
+}
+
+.request-notes-form {
+    margin-top: 52px;
+    width: 100%;
+    height: auto;
+}
+.request-notes-form > div {
+    width: 100%;
+    margin-bottom: 42px;
+}
+.request-notes-form > div > p {
+    font-size: 12px;
+    color: #626262;
+    margin-bottom: 16px;
+}
+.request-notes-form > div > input {
+    width: 100%;
+    height: 35px;
+    border: none;
+    border-bottom: 1px solid #DCE2EB;
+    outline: none;
+}
+.request-notes-form > div > .request-note-btns {
+    width: 100%;
+    height: 45px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.request-note-btns > label {
+    flex: 1;
+    border: 1px solid #DCE2EB;
+    border-radius: 7px;
+    margin: 2px;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.request-note-btns > label.check {
+    border-color: #318AF3;
+    color: #318AF3;
+}
+.request-note-imgs {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.request-note-imgs > * {
+    width: 105px;
+    height: 105px;
+}
+.empty-img {
+    background-color: #eceff4;
+    border-radius: 7px;
+    margin-right: 7px;
+}
+.request-note-imgs > label > img {
+    width: 100%;
+    height: 100%;
+}
+input#img {
+    display: none;
+}
+
+.request-success {
+    width: 100%;
+    height: auto;
 }

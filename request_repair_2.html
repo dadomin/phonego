@@ -81,7 +81,7 @@
                     <input type="radio" name="brand" id="lg" value="lg">
                     <input type="radio" name="brand" id="etc" value="etc">
 
-                    <button id="go-next-agree" class="disagree" disabled onclick="location.href='request_repair_3.html'">동의하고 진행하기</button>
+                    <button id="go-next-agree" class="disagree" disabled onclick="location.href='request_repair_3.html'">다음</button>
                     
                 </div>
                 
@@ -94,13 +94,12 @@
 <script>
     let how = 20;
     var canvas = document.getElementById('canvas');
-    canvas.width = canvas.parentElement.scrollWidth;
     if(canvas.getContext) {
         var ctx = canvas.getContext('2d');
         ctx.fillStyle = "#318AF3";
         ctx.fillRect(0,0,canvas.width*`${how}`/100,2);
-        ctx.font = '10px sans-serif';
-        ctx.fillText(`${how}%`,canvas.width*`${how}`/100- 10,15);
+        ctx.font = '10px Noto Sans KR';
+        ctx.fillText(`${how}%`,canvas.width*`${how}`/100 - 10,13);
     }
    
 

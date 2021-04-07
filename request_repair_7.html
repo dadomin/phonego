@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>견적 요청 - 내 폰 수리하기8(제조사별로 조회)</title>
+    <title>견적 요청 - 내 폰 수리하기 13</title>
 	<link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.6.0.js"></script>
@@ -26,36 +26,31 @@
                 <canvas id="canvas" width="360" height="15"></canvas>
 
                 <div class="request-agree">
-                    <h2>휴대폰 기종을 <br> 선택해 주세요.</h2>
+                    <h2>선택한 수리 항목의 <br>내용을 선택해 주세요.</h2>
                     
-                    <div class="request-various-btns">
-                        <label for="1" class="uncheck">아이폰 12 시리즈</label>
-                        <label for="2" class="uncheck">아이폰 11 시리즈</label>
-                        <label for="3" class="uncheck">아이폰 XS 시리즈</label>
-                        <label for="4" class="uncheck">아이폰 X 시리즈</label>
-                        <label for="5" class="uncheck">아이폰 8 시리즈</label>
-                        <label for="6" class="uncheck">아이폰 7 시리즈</label>
-                        <label for="7" class="uncheck">아이폰 6 시리즈</label>
-                        <label for="8" class="uncheck">아이폰 5 시리즈</label>
-                        <label for="9" class="uncheck">아이폰 4 시리즈</label>
-                        <label for="10" class="uncheck">아이폰 SE 시리즈</label>
-                        <label for="etc" class="uncheck">기타</label>
+                    <div class="request-btns">
+                        <label for="1" class="uncheck">
+                            <p>색상 문제 / 블랙 스크린</p>
+                        </label>
+                        <label for="2" class="uncheck">
+                            <p>액정 터치 불가</p>
+                        </label>
+                        <label for="3" class="uncheck">
+                            <p>액정 파손 (LCD 번짐 있음)</p>
+                        </label>
+                        <label for="4" class="uncheck">
+                            <p>액정 파손 (LCD 번짐 없음)</p>
+                        </label>
                     </div>
 
                     <input type="radio" name="phone" id="1">
                     <input type="radio" name="phone" id="2">
                     <input type="radio" name="phone" id="3">
                     <input type="radio" name="phone" id="4">
-                    <input type="radio" name="phone" id="5">
-                    <input type="radio" name="phone" id="6">
-                    <input type="radio" name="phone" id="7">
-                    <input type="radio" name="phone" id="8">
-                    <input type="radio" name="phone" id="9">
-                    <input type="radio" name="phone" id="10">
-                    <input type="radio" name="phone" id="etc">
+
 
                     
-                    <button id="go-next-agree" class="disagree" disabled onclick="location.href='request_repair_4.html'">다음</button>
+                    <button id="go-next-agree" class="disagree" disabled onclick="location.href='request_repair_8.html'">다음</button>
                     
                 </div>
                 
@@ -66,7 +61,7 @@
 
     
 <script>
-    let how = 30;
+    let how = 70;
     var canvas = document.getElementById('canvas');
     if(canvas.getContext) {
         var ctx = canvas.getContext('2d');
@@ -86,15 +81,19 @@
 
     //제품별 클릭시 체크 
     $("input[name=phone]").on("change", (e)=>{
+       
         let list = document.getElementsByName("phone");
         let idx = $("input[name=phone]").index(e.target);
+        if(idx != 12) {
+            $(".request-various-hidden").slideUp();
+        }
         list.forEach((item, n)=>{
             if (n == idx) {
-                $(".request-various-btns > label").eq(n).removeClass();
-                $(".request-various-btns > label").eq(n).addClass('check');
+                $(".request-btns > label").eq(n).removeClass();
+                $(".request-btns > label").eq(n).addClass('check');
             } else {
-                $(".request-various-btns > label").eq(n).removeClass();
-                $(".request-various-btns > label").eq(n).addClass('uncheck');
+                $(".request-btns > label").eq(n).removeClass();
+                $(".request-btns > label").eq(n).addClass('uncheck');
             }
         });
         check();

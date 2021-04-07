@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>견적 요청 - 내 폰 수리하기8(제조사별로 조회)</title>
+    <title>견적 요청 - 내 폰 수리하기 11~12</title>
 	<link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.6.0.js"></script>
@@ -26,20 +26,28 @@
                 <canvas id="canvas" width="360" height="15"></canvas>
 
                 <div class="request-agree">
-                    <h2>휴대폰 기종을 <br> 선택해 주세요.</h2>
+                    <h2>어떤 항목을 수리하길 <br> 원하시나요?</h2>
                     
                     <div class="request-various-btns">
-                        <label for="1" class="uncheck">아이폰 12 시리즈</label>
-                        <label for="2" class="uncheck">아이폰 11 시리즈</label>
-                        <label for="3" class="uncheck">아이폰 XS 시리즈</label>
-                        <label for="4" class="uncheck">아이폰 X 시리즈</label>
-                        <label for="5" class="uncheck">아이폰 8 시리즈</label>
-                        <label for="6" class="uncheck">아이폰 7 시리즈</label>
-                        <label for="7" class="uncheck">아이폰 6 시리즈</label>
-                        <label for="8" class="uncheck">아이폰 5 시리즈</label>
-                        <label for="9" class="uncheck">아이폰 4 시리즈</label>
-                        <label for="10" class="uncheck">아이폰 SE 시리즈</label>
-                        <label for="etc" class="uncheck">기타</label>
+                        <label for="1" class="uncheck">액정 및 터치 문제</label>
+                        <label for="2" class="uncheck">스피커 등 음향 문제</label>
+                        <label for="3" class="uncheck">하우징 파손<br>(뒷판,외관 케이스)</label>
+                        <label for="4" class="uncheck">버튼 불량</label>
+                        <label for="5" class="uncheck">카메라 / 후레쉬 문제</label>
+                        <label for="6" class="uncheck">각종 잭 불량<br>(충전, 이어폰)</label>
+                        <label for="7" class="uncheck">Wifi / 블루투스 / GPS 불량</label>
+                        <label for="8" class="uncheck">메인보드<br>(전원이 켜지지 않음)</label>
+                        <label for="9" class="uncheck">각종 센서 불량<br>(홍채, Face ID)</label>
+                        <label for="10" class="uncheck">배터리 교체</label>
+                        <label for="11" class="uncheck">진동 문제</label>
+                        <label for="12" class="uncheck">리퍼</label>
+                        <label for="etc" class="uncheck" id="hidden-form">
+                            <p>기타</p>
+                            <div class="request-various-hidden">
+                                <p>파손 정보를 직접 입력해주세요</p>
+                                <input type="text">
+                            </div>
+                        </label>
                     </div>
 
                     <input type="radio" name="phone" id="1">
@@ -52,10 +60,12 @@
                     <input type="radio" name="phone" id="8">
                     <input type="radio" name="phone" id="9">
                     <input type="radio" name="phone" id="10">
+                    <input type="radio" name="phone" id="11">
+                    <input type="radio" name="phone" id="12">
                     <input type="radio" name="phone" id="etc">
 
                     
-                    <button id="go-next-agree" class="disagree" disabled onclick="location.href='request_repair_4.html'">다음</button>
+                    <button id="go-next-agree" class="disagree" disabled onclick="location.href='request_repair_7.html'">다음</button>
                     
                 </div>
                 
@@ -66,7 +76,7 @@
 
     
 <script>
-    let how = 30;
+    let how = 60;
     var canvas = document.getElementById('canvas');
     if(canvas.getContext) {
         var ctx = canvas.getContext('2d');
@@ -86,8 +96,12 @@
 
     //제품별 클릭시 체크 
     $("input[name=phone]").on("change", (e)=>{
+       
         let list = document.getElementsByName("phone");
         let idx = $("input[name=phone]").index(e.target);
+        if(idx != 12) {
+            $(".request-various-hidden").slideUp();
+        }
         list.forEach((item, n)=>{
             if (n == idx) {
                 $(".request-various-btns > label").eq(n).removeClass();
@@ -100,6 +114,11 @@
         check();
     });
 
+    //기타 클릭시 나오기 
+    $(".request-various-hidden").hide();
+    $("#hidden-form").on("click", ()=>{
+        $(".request-various-hidden").slideDown();
+    });
 
 </script>
 
