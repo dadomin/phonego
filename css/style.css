@@ -808,3 +808,73 @@ input[type=radio] {
     color: #318AF3;
     font-weight: bold;
 }
+
+.loading-form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 21px;
+}
+.loading-form > img {
+    width: 21px;
+    margin-bottom: 7px;
+}
+.loading-form > p {
+    color: #9f9f9f;
+    text-align: center;
+    font-size: 10px;
+}
+.result-form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 24px;
+}
+.result-form > .result-img {
+    width: 65px;
+    height: 65px;
+    overflow: hidden;
+    border: 1.5px solid #dce2eb;
+    border-radius: 12px;
+    position: relative;
+}
+.result-img > img {
+    width: 105%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.result-form > .result-sub {
+    padding-top: 7px;
+    margin-left: 14px;
+    font-size: 10px;
+    line-height: 1.7;
+}
+.result-sub > p {
+    color: #9f9f9f;
+}
+.result-sub > p > span {
+    color: #333;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+.request-hidden > .warning-txt {
+    color: #FF5749;
+    margin-top: -15px;
+    margin-bottom: 21px;
+    display: none;
+}
+
+.request-variouts-btns {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    
+}

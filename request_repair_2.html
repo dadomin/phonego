@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>견적 요청 - 내 폰 수리하기(유저)</title>
+    <title>견적 요청 - 내 폰 수리하기6~7</title>
 	<link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.6.0.js"></script>
@@ -37,6 +37,7 @@
                                     <input type="text">
                                     <button id="lookup-btn">조회하기</button>
                                 </div>
+                                <p class="warning-txt">해당 번호로 조회할 수 없습니다. 번호를 다시 확인해주세요.</p>
                                 <div class="loading-form">
                                     <img src="img/phone-loading.png" alt="">
                                     <p>
@@ -80,7 +81,7 @@
                     <input type="radio" name="brand" id="lg" value="lg">
                     <input type="radio" name="brand" id="etc" value="etc">
 
-                    <button id="go-next-agree" class="disagree" disabled onclick="location.href='request_repair_2.html'">동의하고 진행하기</button>
+                    <button id="go-next-agree" class="disagree" disabled onclick="location.href='request_repair_3.html'">동의하고 진행하기</button>
                     
                 </div>
                 
@@ -91,16 +92,16 @@
 
     
 <script>
-        let how = 20;
-        var canvas = document.getElementById('canvas');
-        canvas.width = canvas.parentElement.scrollWidth;
-        if(canvas.getContext) {
-            var ctx = canvas.getContext('2d');
-            ctx.fillStyle = "#318AF3";
-            ctx.fillRect(0,0,canvas.width*`${how}`/100,2);
-            ctx.font = '10px sans-serif';
-            ctx.fillText(`${how}%`,canvas.width*`${how}`/100- 10,15);
-        }
+    let how = 20;
+    var canvas = document.getElementById('canvas');
+    canvas.width = canvas.parentElement.scrollWidth;
+    if(canvas.getContext) {
+        var ctx = canvas.getContext('2d');
+        ctx.fillStyle = "#318AF3";
+        ctx.fillRect(0,0,canvas.width*`${how}`/100,2);
+        ctx.font = '10px sans-serif';
+        ctx.fillText(`${how}%`,canvas.width*`${how}`/100- 10,15);
+    }
    
 
     // 약관과 다음진행 버튼체크
@@ -141,6 +142,7 @@
                 $(".request-button-form > label").eq(n).addClass('uncheck');
             }
         });
+        check();
     });
 
     //IMEI 조회 입력 설정
@@ -157,12 +159,8 @@
     $(".result-form").slideUp();
    // 조회하기 시 로딩 후 화면 띄우기
     $("#lookup-btn").on("click", (e)=>{
-        $(".loading-form").slideDown();
-        setTimeout(function(){
-            $(".loading-form").slideUp();
-            $(".result-form").slideDown();
-            check();
-        }, 700);
+        $(".request-input-form").css("border-bottom", "1.3px solid #FF5749");
+        $(".warning-txt").show();
     });
 
 </script>
