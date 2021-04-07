@@ -48,15 +48,22 @@
                             <h3>제조사별 제품 조회하기</h3>
                             <div class="request-hidden">
                                 <div class="request-button-form">
-                                    <button value="apple"></button>
-                                    <button value="samsung"></button>
+                                    <label for="apple" class="uncheck"><img src="img/apple.png" alt=""><p>애플</p></label>
+                                    <label for="samsung" class="uncheck"><img src="img/samsung.png" alt=""><p>삼성</p></label>
+                                    <label for="lg" class="uncheck"><img src="img/lg.png" alt=""><p>엘지</p></label>
+                                    <label for="etc" class="uncheck"><img src="img/etc.png" alt=""><p>기타</p></label>
                                 </div>
                             </div>
                         </div>
                     </div>
 
+                    
+                    <input type="radio" name="brand" id="apple" value="apple">
+                    <input type="radio" name="brand" id="samsung" value="samsung">
+                    <input type="radio" name="brand" id="lg" value="lg">
+                    <input type="radio" name="brand" id="etc" value="etc">
 
-                    <button id="go-next-agree" class="disagree" disabled onclick="location.href='request_repair_1.html'">동의하고 진행하기</button>
+                    <button id="go-next-agree" class="disagree" disabled >동의하고 진행하기</button>
                     
                 </div>
                 
@@ -85,6 +92,8 @@
         $("#go-next-agree").addClass('agree');
         $("#go-next-agree").attr("disabled", false);
     }
+
+    // 버튼 클릭시 폼 나오게하기
     $(".request-input-btn > h3").on("click",(e)=>{
         e.target.parentNode.click();
     })
@@ -101,6 +110,31 @@
 
     });
 
+
+    //제품별 클릭시 체크 
+    $("input[name=brand]").on("change", (e)=>{
+        let list = document.getElementsByName("brand");
+        let idx = $("input[name=brand]").index(e.target);
+        list.forEach((item, n)=>{
+            if (n == idx) {
+                $(".request-button-form > label").eq(n).removeClass();
+                $(".request-button-form > label").eq(n).addClass('check');
+            } else {
+                $(".request-button-form > label").eq(n).removeClass();
+                $(".request-button-form > label").eq(n).addClass('uncheck');
+            }
+        });
+    });
+
+    //IMEI 조회 입력 설정
+    $("input[type=text]").on("input", (e)=>{
+        $(".request-input-form").css("border-bottom", "1.3px solid #318AF3");
+    });
+    $("input[type=text]").on("focusout", (e)=>{
+        if(e.target.value=="") {
+            $(".request-input-form").css("border-bottom", "1.3px solid #9f9f9f");
+        }
+    })
    
     
 
