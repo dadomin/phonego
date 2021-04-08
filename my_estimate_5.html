@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 견적 조회 -수리 -견적 리스트 상세</title>
+	<link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="wrap">
+
+
+            <section id="estimate">
+                
+                <header>
+                    <button id="back-btn" onclick="history.back();"><img src="img/left.png" alt=""></button>
+                    <p>phoneGO</p>
+                    <button id="close-btn"><img src="img/exit.png" alt=""></button>
+                </header>
+
+
+                <div class="my-estimate-view">
+                    <div class="profile">
+                        <div class="profile-img">
+                            <img src="img/phongo-profile.png" alt="">
+                        </div>
+                        <div class="profile-sub">
+                            <button>지도 보기</button>
+                            <h3>phoneGO</h3>
+                            <div class="profile-point">
+                                <p>서울 노원구 공릉로 46가길 29</p>
+                            </div>
+                            <div class="profile-scope">
+                                <div class="profile-scope-stars">
+                                    <img src="img/star_0.png" alt="star" class="star" id="first_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="second_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="third_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="fourth_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="fifth_star">
+                                </div>
+                                <p>(<span id="star-result">0</span>)</p>
+                                <span>후기 14개</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <ul class="profile-scope-fields">
+                        <li>
+                            <p>가격만족도</p>
+                            <div class="amount-scope-stars">
+                                <img src="img/star_0.png" alt="star" class="star" id="first_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="second_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="third_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="fourth_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="fifth_star">
+                            </div>
+                        </li>
+                        <li>
+                            <p>품질만족도</p>
+                            <div class="quality-scope-stars">
+                                <img src="img/star_0.png" alt="star" class="star" id="first_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="second_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="third_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="fourth_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="fifth_star">
+                            </div>
+                        </li>
+                        <li>
+                            <p>친절도</p>
+                            <div class="kind-scope-stars">
+                                <img src="img/star_0.png" alt="star" class="star" id="first_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="second_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="third_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="fourth_star">
+                                <img src="img/star_0.png" alt="star" class="star" id="fifth_star">
+                            </div>
+                        </li>
+                    </ul>
+
+                </div>
+                
+                
+                <div class="my-estimate-msg">
+                    <div>
+                        <span>예상 견적가</span>
+                        <p>50,000원</p>
+                    </div>
+                    <div>
+                        <span>업체 메세지</span>
+                        <p>리퍼 20만원입니다. 언제든지 오세요.</p>
+                    </div>
+                </div>
+
+                <div class="estimate-my-request" style="padding-top: 0;">
+
+                    <div>
+                        <div><span>제공 서비스</span><p>애플</p></div>
+                        <div><span>추가 서비스</span><p>택배 / 퀵 / 출장수리 / 무료주차</p></div>
+                        <div class="dot-line"></div>
+                        <div><span>업체 설명</span><p>순돌이모바일 신도림 테크노마트점 입니다. <br>
+                            9층 66호에 위치해있습니다. <br>
+                            모든 휴대폰 수리합니다.</p></div>
+                        <div>
+                            <span>업체 사진</span>
+                            <div class="estimate-imgs">
+                                <div><img src="img/img1.png" alt=""></div>
+                                <div><img src="img/img2.png" alt=""></div>
+                                <div><img src="img/img3.png" alt=""></div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <button id="go-next-estimate" class="agree" onclick="location.href='request_repair_8.html'">
+                        <img src="img/up-white.png" alt="" width="22px">
+                        <p>예약 및 문의하기</p>
+                    </button>
+                    
+                </div>
+                
+            </section>
+
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+    $(".profile-scope-stars > .star").on("click", (e)=>{
+        let list = $(".profile-scope-stars > .star");
+        console.log(list);
+        for(let i = 0; i < list.length; i++){
+            $(".profile-scope-stars > .star").eq(i).attr("src", "img/star_0.png");
+        }
+        let idx = $(".profile-scope-stars > .star").index(e.target);
+        let x = e.offsetX;
+        let w = e.target.offsetWidth;
+        let s = x / w;
+        s = Math.ceil(s * 10)/10;
+        let result = idx + s;
+        $("#star-result").html(result);
+        if(idx != 0 ) {
+            for(let i = idx-1; i > -1; i--) {
+                $(".profile-scope-stars > .star").eq(i).attr("src", "img/star_100.png");
+            }
+        }
+        
+        if(s > 0 && s <1){
+            $(e.target).attr("src", "img/star_50.png");
+        }else if(s == 1){
+            $(e.target).attr("src", "img/star_100.png");
+        }
+        
+    });
+
+    $(".amount-scope-stars > .star").on("click", (e)=>{
+        let list = $(".amount-scope-stars > .star");
+        console.log(list);
+        for(let i = 0; i < list.length; i++){
+            $(".amount-scope-stars > .star").eq(i).attr("src", "img/star_0.png");
+        }
+        let idx = $(".amount-scope-stars > .star").index(e.target);
+        let x = e.offsetX;
+        let w = e.target.offsetWidth;
+        let s = x / w;
+        s = Math.ceil(s * 10)/10;
+        if(idx != 0 ) {
+            for(let i = idx-1; i > -1; i--) {
+                $(".amount-scope-stars > .star").eq(i).attr("src", "img/star_100.png");
+            }
+        }
+        
+        if(s > 0 && s <1){
+            $(e.target).attr("src", "img/star_50.png");
+        }else if(s == 1){
+            $(e.target).attr("src", "img/star_100.png");
+        }
+        
+    });
+
+    $(".quality-scope-stars > .star").on("click", (e)=>{
+        let list = $(".quality-scope-stars > .star");
+        console.log(list);
+        for(let i = 0; i < list.length; i++){
+            $(".quality-scope-stars > .star").eq(i).attr("src", "img/star_0.png");
+        }
+        let idx = $(".quality-scope-stars > .star").index(e.target);
+        let x = e.offsetX;
+        let w = e.target.offsetWidth;
+        let s = x / w;
+        s = Math.ceil(s * 10)/10;
+        if(idx != 0 ) {
+            for(let i = idx-1; i > -1; i--) {
+                $(".quality-scope-stars > .star").eq(i).attr("src", "img/star_100.png");
+            }
+        }
+        
+        if(s > 0 && s <1){
+            $(e.target).attr("src", "img/star_50.png");
+        }else if(s == 1){
+            $(e.target).attr("src", "img/star_100.png");
+        }
+        
+    });
+
+    $(".kind-scope-stars > .star").on("click", (e)=>{
+        let list = $(".kind-scope-stars > .star");
+        console.log(list);
+        for(let i = 0; i < list.length; i++){
+            $(".kind-scope-stars > .star").eq(i).attr("src", "img/star_0.png");
+        }
+        let idx = $(".kind-scope-stars > .star").index(e.target);
+        let x = e.offsetX;
+        let w = e.target.offsetWidth;
+        let s = x / w;
+        s = Math.ceil(s * 10)/10;
+        if(idx != 0 ) {
+            for(let i = idx-1; i > -1; i--) {
+                $(".kind-scope-stars > .star").eq(i).attr("src", "img/star_100.png");
+            }
+        }
+        
+        if(s > 0 && s <1){
+            $(e.target).attr("src", "img/star_50.png");
+        }else if(s == 1){
+            $(e.target).attr("src", "img/star_100.png");
+        }
+        
+    });
+
+</script>

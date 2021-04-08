@@ -1,0 +1,136 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 견적 조회 -수리 -견적 리스트 상세 -예약 및 문의하기3</title>
+	<link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="wrap">
+
+            <section id="inquire">
+                <div class="back"></div>
+                <div class="messenger-tab">
+                    
+                    <button id="exit-btn"><img src="img/exit.png" alt=""></button>
+                    <div class="messenger-calender">
+                        <h2>날짜를 선택해 주세요</h2>
+                        <div class="calender-month">
+                            <button class="prev-month"><img src="img/left.png" alt=""></button>
+                            <h2>3월</h2>
+                            <button class="next-month"><img src="img/right-2.png" alt=""></button>
+                        </div>
+                        <table>
+                            <tr>
+                                <th>일</th>
+                                <th>월</th>
+                                <th>화</th>
+                                <th>수</th>
+                                <th>목</th>
+                                <th>금</th>
+                                <th>토</th>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>1</td>
+                                <td>2</td>
+                                <td>3</td>
+                                <td>4</td>
+                                <td>5</td>
+                                <td>6</td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>8</td>
+                                <td>9</td>
+                                <td>10</td>
+                                <td>11</td>
+                                <td>12</td>
+                                <td>13</td>
+                            </tr>
+                            <tr>
+                                <td>14</td>
+                                <td>15</td>
+                                <td>16</td>
+                                <td>17</td>
+                                <td>18</td>
+                                <td>19</td>
+                                <td>20</td>
+                            </tr>
+                            <tr>
+                                <td>21</td>
+                                <td>22</td>
+                                <td>23</td>
+                                <td>24</td>
+                                <td>25</td>
+                                <td>26</td>
+                                <td>27</td>
+                            </tr>
+                            <tr>
+                                <td>28</td>
+                                <td>29</td>
+                                <td class="check">30</td>
+                                <td>31</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="messenger-time">
+                        <h2>시간을 선택해주세요</h2>
+                        <p>해당 업체에서 방문 상담이 가능한 시간만 표기됩니다.</p>
+                        <div class="messenger-time-btns">
+                            <label class="uncheck" for="11">11</label>
+                            <label class="uncheck" for="13">13</label>
+                            <label class="uncheck" for="14">14</label>
+                            <label class="uncheck" for="15">15</label>
+                            <label class="uncheck" for="16">16</label>
+                            <label class="uncheck" for="17">17</label>
+                            <label class="uncheck" for="18">18</label>
+                        </div>
+
+                        <input type="radio" name="time" id="11">
+                        <input type="radio" name="time" id="13">
+                        <input type="radio" name="time" id="14">
+                        <input type="radio" name="time" id="15">
+                        <input type="radio" name="time" id="16">
+                        <input type="radio" name="time" id="17">
+                        <input type="radio" name="time" id="18">
+
+
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+
+    <script>
+         //제품별 클릭시 체크 
+        $("input[name=time]").on("change", (e)=>{
+            let list = document.getElementsByName("time");
+            let idx = $("input[name=time]").index(e.target);
+            list.forEach((item, n)=>{
+                if (n == idx) {
+                    $(".messenger-time-btns > label").eq(n).removeClass();
+                    $(".messenger-time-btns > label").eq(n).addClass('check');
+                } else {
+                    $(".messenger-time-btns > label").eq(n).removeClass();
+                    $(".messenger-time-btns > label").eq(n).addClass('uncheck');
+                }
+            }); 
+        });
+
+    </script>
+
+</body>
+</html> 
