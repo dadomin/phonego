@@ -1695,6 +1695,9 @@ li.check > .estimate-list-now {
     flex-direction: column;
     align-items: flex-end;
 }
+.bubble-txt {
+    margin-bottom: 21px;
+}
 .m-user > .bubble {
     width: auto;
     height: auto;
@@ -1751,7 +1754,7 @@ li.check > .estimate-list-now {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    margin-top: 21px;
+    margin-bottom: 7px;
 }
 .bubble > button > img {
     width:18px;
@@ -1864,4 +1867,39 @@ td.check {
     background-color: #318AF3;
     border-color: #318AF3;
     color: #fff;
+}
+
+.m-partner-user {
+    width: auto;
+    height: auto;
+    display: flex;
+}
+.m-profile {
+    margin-right: 12px;
+    width:32px;
+    height: 32px;
+    overflow: hidden;
+    border: 1px solid #dce2eb;
+    border-radius: 50%;
+    position: relative;
+}
+.m-profile > img {
+    width: 105%;
+    height: auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.m-partner-bubble > p {
+    color: #626262;
+    margin-bottom: 6px;
+}
+.m-partner-bubble > .bubble{
+    width: auto;
+    height: auto;
+    background: #DDEDFF;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border-top-left-radius: 3px;
 }
