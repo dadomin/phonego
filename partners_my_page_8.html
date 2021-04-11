@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마이페이지 - 내정보 수정하기4 </title>
+	<link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="wrap">
+
+
+            <section id="estimate">
+                
+                <header>
+                    <button id="back-btn" onclick="history.back();"><img src="img/left.png" alt=""></button>
+                    <p>phoneGO</p>
+                    <button id="close-btn"><img src="img/exit.png" alt=""></button>
+                </header>
+
+                    <div class="input-form">
+                        <div>
+                            <h2>업체정보.</h2>
+                            <div class="input-box">
+                                <p>업체명</p>
+                                <input type="text" value="phoneGO">
+                            </div>
+                            <div class="input-box logo-input">
+                                <p>CI(로고)</p>
+                                <div>
+                                    <div class="logo-img">
+                                    </div>
+                                    <label for="file">이미지 업로드</label>
+                                    <button>삭제</button>
+                                    <input type="file" id="file">
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <p>휴대폰 번호 <span>*카카오톡 견적 수신</span></p>
+                                <input type="text" value="01047351891">
+                            </div>
+                            <div class="input-box">
+                                <p>주소</p>
+                                <input type="text" value="서울시 강동구 고덕로 131 1층">
+                            </div>
+                            <div class="input-box">
+                                <p>업체 소개</p>
+                                <input type="text" value="강동구에 위치한 업체">
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>사업주 정보.</h2>
+                            <div class="input-box">
+                                <p>대표자 성함</p>
+                                <input type="text" value="박민진">
+                            </div>
+                            <div class="input-box">
+                                <p>업체 전화번호</p>
+                                <input type="text" value="01047351891">
+                            </div>
+                            <div class="input-box">
+                                <p>이메일</p>
+                                <input type="text" value="info@phonego.co.kr">
+                            </div>
+                        </div>
+
+                        <div>
+                            <h2>제공 서비스</h2>
+                            <div class="input-box">
+                                <p>주요 서비스</p>
+                                <div class="input-btns">
+                                    <button class="input-btn-30 check"><p><img src="img/check-yes-blue.png" alt="">애플</p></button>
+                                    <button class="input-btn-30"><p><img src="img/check-yes-blue.png" alt="">삼성</p></button>
+                                    <button class="input-btn-30"><p><img src="img/check-yes-blue.png" alt="">LG</p></button>
+                                    <button class="input-btn-100 check">
+                                        <p><img src="img/check-yes-blue.png" alt="">기타</p>
+                                        <input type="text" placeholder="기타 제조사를 직접 입력해주세요">
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <p>제공 서비스</p>
+                                <div class="input-btns">
+                                    <button class="input-btn-50 check">
+                                        <p><img src="img/check-yes-blue.png" alt="">택배/퀵 수리</p>
+                                    </button>
+                                    <button class="input-btn-50">
+                                        <p><img src="img/check-yes-blue.png" alt="">유상 리퍼 제공</p>
+                                    </button>
+                                    <button class="input-btn-50">
+                                        <p><img src="img/check-yes-blue.png" alt="">중고폰 매입</p>
+                                    </button>
+                                    <button class="input-btn-50">
+                                        <p><img src="img/check-yes-blue.png" alt="">임대폰 제공</p>
+                                    </button>
+                                    <button class="input-btn-50">
+                                        <p><img src="img/check-yes-blue.png" alt="">악세서리 판매</p>
+                                    </button>
+                                    <button class="input-btn-50">
+                                        <p><img src="img/check-yes-blue.png" alt="">무료 주차</p>
+                                    </button>
+                                    <button class="input-btn-100 check">
+                                        <p><img src="img/check-yes-blue.png" alt="">기타 제공 서비스</p>
+                                        <input type="text" placeholder="기타 제공 서비스를 직접 입력해주세요">
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="input-box">
+                                <p>예약 서비스</p>
+                                <p class="input-small">*반드시 예약이 가능한 날과 시간만 체크해주세요.</p>
+                                <p class="input-medium">1. 예약이 가능한 요일을 설정해 주세요.</p>
+                                <div class="input-btns">
+                                    <button class="input-btn-50"><p><img src="img/check-yes-blue.png" alt="">월 - 금</p></button>
+                                    <button class="input-btn-50"><p><img src="img/check-yes-blue.png" alt="">월 - 일 (주말)</p></button>
+                                    <button class="input-btn-50"><p><img src="img/check-yes-blue.png" alt="">공휴일을 제외한 매일</p></button>
+                                    <button class="input-btn-50"><p><img src="img/check-yes-blue.png" alt="">연중무휴</p></button>
+                                    <button class="input-btn-100 check">
+                                        <p><img src="img/check-yes-blue.png" alt="">매주 지정한 요일 제외 (직접 지정)</p>
+                                        <span>* 중복 지정이 가능합니다.</span>
+                                        <div class="input-day-btns">
+                                            <div class="check">월</div>
+                                            <div>화</div>
+                                            <div>수</div>
+                                            <div>목</div>
+                                            <div>금</div>
+                                            <div class="check">토</div>
+                                            <div>일</div>
+                                        </div>
+                                        <div class="input-day-btn">공휴일(빨간 날)</div>
+                                    </button>
+                                </div>
+                                <p class="input-medium">2. 예약이 가능한 시간을 설정해 주세요.</p>
+                                <div class="input-inputs">
+                                    <div>
+                                        <p>예약 시작</p>
+                                        <input type="text" placeholder="시작 시간 설정하기" value="오전 10:00" class="outline">
+                                    </div>
+                                    <span>-</span>
+                                    <div>
+                                        <p>예약 종료</p>
+                                        <input type="text" placeholder="종료 시간 설정하기"value="오후 19:00" class="outline">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="input-box logo-input img">
+                                <p>소개 이미지</p>
+                                <div>
+                                    <div class="logo-img">
+                                    </div>
+                                    <label for="file"><img src="img/choose-img.png" alt=""></label>
+                                    <input type="file" id="file">
+                                </div>
+                            </div>
+                        </div>
+
+                        
+                    <button id="go-next-estimate" class="disagree">
+                        <p>저장하기</p>
+                    </button>
+                    </div>
+
+            </section>
+
+        </div>
+    </div>
+
+</body>
+</html>

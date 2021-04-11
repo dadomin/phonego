@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내 견적 조회 -수리 -견적 리스트 상세 - 후기작성하기 3</title>
+	<link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="wrap">
+
+
+            <section id="estimate">
+                
+                <header>
+                    <button id="back-btn" onclick="history.back();"><img src="img/left.png" alt=""></button>
+                    <p>phoneGO</p>
+                    <button id="close-btn"><img src="img/exit.png" alt=""></button>
+                </header>
+       
+               <div class="estimate-review-write">
+                    <h2>후기 작성하기.</h2>
+                    <div class="estimate-review-form">
+                            
+                        <div class="review-stars-form">
+                            <div class="review-scope">
+                                <div class="review-scope-stars">
+                                    <img src="img/star_0.png" alt="star" class="star" id="first_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="second_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="third_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="fourth_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="fifth_star">
+                                </div>
+                                <p>가격만족도</p>
+                            </div>
+                            <div class="review-scope">
+                                <div class="review-scope-stars">
+                                    <img src="img/star_0.png" alt="star" class="star" id="first_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="second_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="third_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="fourth_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="fifth_star">
+                                </div>
+                                <p>품질 만족도</p>
+                            </div>
+                            <div class="review-scope">
+                                <div class="review-scope-stars">
+                                    <img src="img/star_0.png" alt="star" class="star" id="first_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="second_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="third_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="fourth_star">
+                                    <img src="img/star_0.png" alt="star" class="star" id="fifth_star">
+                                </div>
+                                <p>친절도</p>
+                            </div>
+                        
+                        </div>
+
+
+                    </div>
+                    
+               </div>
+               
+               <div class="review-detail-form">
+                    <div class="review-detail-auto">
+                        <div><span>업체명</span><p>phoneGO</p></div>
+                        <div><span>제품</span><p>아이폰 11 PRO MAX 블랙</p></div>
+                        <div><span>거래내용</span><p>수정 액정및 터치 문제</p></div>
+                    </div>
+                    <div class="review-detail-amount">
+                        <span>최종 거래 금액</span><p>50,000원</p>
+                    </div>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력해주세요."></textarea>
+                </div>
+                        
+
+                <button id="go-next-estimate" class="agree">
+                    <p>완료</p>
+                </button>
+                
+                
+            </section>
+
+        </div>
+    </div>
+
+    <div class="alert-dialog">
+        <div class="back"></div>
+        <div class="alert-msg">
+            <p>소중한 후기를 남겨주셔서<br>감사합니다</p>
+            <button>확인</button>
+        </div>
+    </div>
+
+</body>
+</html>
+
+<script>
+     $(".star").on("click", (e)=>{
+        let target = e.target.parentNode;
+        let list = $(target).children(".star");
+        console.log(list);
+        for(let i = 0; i < list.length; i++){
+           $(list).eq(i).attr("src", "img/star_0.png");
+        }
+        let idx =$(list).index(e.target);
+        let x = e.offsetX;
+        let w = e.target.offsetWidth;
+        let s = x / w;
+        s = Math.ceil(s * 10)/10;
+        let result = idx + s;
+        if(idx != 0 ) {
+            for(let i = idx-1; i > -1; i--) {
+               $(list).eq(i).attr("src", "img/star_100.png");
+            }
+        }
+        
+        if(s > 0 && s <1){
+            $(e.target).attr("src", "img/star_50.png");
+        }else if(s == 1){
+            $(e.target).attr("src", "img/star_100.png");
+        }
+        
+    });
+
+</script>

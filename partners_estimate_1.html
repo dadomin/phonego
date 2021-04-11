@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>내가 받은 요청 - 수리 1</title>
+	<link rel="stylesheet" href="fontawesome/css/all.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/jquery-3.6.0.js"></script>
+</head>
+<body>
+    <div id="wrapper">
+
+        <div id="wrap">
+
+
+            <section id="estimate">
+                
+                <header>
+                    <button id="back-btn" onclick="history.back();"><img src="img/left.png" alt=""></button>
+                    <button id="menu-btn"><i class="fas fa-bars"></i></button>
+                </header>
+                <div class="partners-estimate-list">
+                    <h2>내가 받은 요청.</h2>
+                    <div class="estimate-list-form">
+                        <ul>
+                            <li class="check">
+                                <p>수리</p>
+                                <div class="estimate-list-now"></div>
+                            </li>
+                            <li>
+                                <p>구매</p>
+                                <div class="estimate-list-now"></div>
+                            </li>
+                            <li>
+                                <p>판매</p>
+                                <div class="estimate-list-now"></div>
+                            </li>
+                        </ul>
+                        <div class="estimate-list">
+                            <div>
+                                <p>2021.01.27 13:45</p>
+                                <div class="estimate-list-btn">
+                                    <span>20210202R001</span>
+                                    <div class="new">N</div>
+                                    <div class="estimate-list-img">
+                                        <img src="img/iphone-11-pro-max-black.png" alt="">
+                                    </div>
+                                    <div class="estimate-list-detail">
+                                        <span>애플</span>
+                                        <h2>삼성<span>|</span>갤럭시 노트7<span>|</span>블랙</h2>
+                                        <p>뒷판 파손 <span>|</span>매장 방문 수리</p>
+                                        <p>서울 서대문구 홍은동<span>|</span>약 13.81Km ...</p>
+                                    </div>
+                                    <button class="estimate-list-slight proc">진행 중</button>
+                                    <p class="estimate-list-recive">받은견적 4/10</p>
+                                    <button class="estimate-list-status proc">견적 미발송</button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>2021.01.27 13:45</p>
+                                <div class="estimate-list-btn">
+                                    <span>20210202R001</span>
+                                    <div class="estimate-list-img">
+                                        <img src="img/iphone-11-pro-max-black.png" alt="">
+                                    </div>
+                                    <div class="estimate-list-detail">
+                                        <span>애플</span>
+                                        <h2>삼성<span>|</span>갤럭시 노트7<span>|</span>블랙</h2>
+                                        <p>뒷판 파손 <span>|</span>매장 방문 수리</p>
+                                        <p>서울 서대문구 홍은동<span>|</span>약 13.81Km ...</p>
+                                    </div>
+                                    <button class="estimate-list-slight proc">진행 중</button>
+                                    <p class="estimate-list-recive">받은견적 4/10</p>
+                                    <button class="estimate-list-status">견적 발송완료</button>
+                                </div>
+                            </div>
+                            <div>
+                                <p>2021.01.27 13:45</p>
+                                <div class="estimate-list-btn done">
+                                    <span>20210202R001</span>
+                                    <div class="estimate-list-img">
+                                        <img src="img/iphone-11-pro-max-black.png" alt="">
+                                    </div>
+                                    <div class="estimate-list-detail">
+                                        <span>애플</span>
+                                        <h2>삼성<span>|</span>갤럭시 노트7<span>|</span>블랙</h2>
+                                        <p>뒷판 파손 <span>|</span>매장 방문 수리</p>
+                                        <p>서울 서대문구 홍은동<span>|</span>약 13.81Km ...</p>
+                                    </div>
+                                    <button class="estimate-list-slight done">종료</button>
+                                    <p class="estimate-list-recive">받은견적 4/10</p>
+                                    <button class="estimate-list-status">견적 발송완료</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                </div>
+               
+                
+                
+            </section>
+
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+<script>
+     $(".star").on("click", (e)=>{
+        let target = e.target.parentNode;
+        let list = $(target).children(".star");
+        console.log(list);
+        for(let i = 0; i < list.length; i++){
+           $(list).eq(i).attr("src", "img/star_0.png");
+        }
+        let idx =$(list).index(e.target);
+        let x = e.offsetX;
+        let w = e.target.offsetWidth;
+        let s = x / w;
+        s = Math.ceil(s * 10)/10;
+        let result = idx + s;
+        if(idx != 0 ) {
+            for(let i = idx-1; i > -1; i--) {
+               $(list).eq(i).attr("src", "img/star_100.png");
+            }
+        }
+        
+        if(s > 0 && s <1){
+            $(e.target).attr("src", "img/star_50.png");
+        }else if(s == 1){
+            $(e.target).attr("src", "img/star_100.png");
+        }
+        
+    });
+
+</script>
