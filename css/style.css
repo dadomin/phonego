@@ -570,6 +570,8 @@ img#fifth_star{left:72px;}
     background-position: center center;
     background-size: 12px;
     background-repeat: no-repeat;
+    border: none;
+    padding: 0;
 }
 label {
     cursor: pointer;
@@ -620,6 +622,9 @@ label {
 /* request-detail */
 #request-detail {
     padding: 70px 20px;
+    width: 100%;
+    height: auto;
+    position: relative;
 }
 #request-detail > h3 {
     font-size: 16px;
@@ -655,7 +660,7 @@ label {
 .detail-warning {
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -100%;
     width: 100%;
     height: auto;
     padding: 25px 20px;
@@ -968,8 +973,10 @@ input[type=radio] {
     flex-direction: row;
 }
 .request-colors > label {
-    margin-right: 20px;
+    margin-right: 21px;
     text-align: center;
+    border: none;
+    padding: 0;
 }
 .request-colors > label > p {
     font-size: 13px;
@@ -1052,6 +1059,7 @@ input[type=radio] {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
 }
 .request-note-btns > label.check {
     border-color: #318AF3;
@@ -1071,6 +1079,10 @@ input[type=radio] {
     background-color: #eceff4;
     border-radius: 7px;
     margin-right: 7px;
+}
+.request-note-imgs > label {
+    border: none;
+    padding: 0;
 }
 .request-note-imgs > label > img {
     width: 100%;
@@ -1631,13 +1643,13 @@ li.check > .estimate-list-now {
 .messenger-tab {
     width: 100%;
     height: auto;
-    min-height: 100%;
+    min-height: 95%;
     position: absolute;
     background-color: #fff;
-    top: 50px;
+    top: 5%;
     left: 0;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
+    border-top-left-radius: 21px;
+    border-top-right-radius: 21px;
     overflow: hidden;
 }
 .messenger-title {
@@ -2229,7 +2241,7 @@ td.check {
     margin: 0 4px;
     color: #dce2eb;
 }
-.estimate-list-btn.done {
+.estimate-list > div.done {
     opacity: .5;
 }
 

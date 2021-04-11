@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>내 견적 조회 -수리 -견적 리스트 상세</title>
+    <title>내 견적 조회 -수리 -견적 리스트 상세(유저)</title>
 	<link rel="stylesheet" href="fontawesome/css/all.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/jquery-3.6.0.js"></script>
@@ -170,71 +170,22 @@
         }
         
     });
-
-    $(".amount-scope-stars > .star").on("click", (e)=>{
-        let list = $(".amount-scope-stars > .star");
+    $(".star").on("click", (e)=>{
+        let target = e.target.parentNode;
+        let list = $(target).children(".star");
         console.log(list);
         for(let i = 0; i < list.length; i++){
-            $(".amount-scope-stars > .star").eq(i).attr("src", "img/star_0.png");
+           $(list).eq(i).attr("src", "img/star_0.png");
         }
-        let idx = $(".amount-scope-stars > .star").index(e.target);
+        let idx =$(list).index(e.target);
         let x = e.offsetX;
         let w = e.target.offsetWidth;
         let s = x / w;
         s = Math.ceil(s * 10)/10;
+        let result = idx + s;
         if(idx != 0 ) {
             for(let i = idx-1; i > -1; i--) {
-                $(".amount-scope-stars > .star").eq(i).attr("src", "img/star_100.png");
-            }
-        }
-        
-        if(s > 0 && s <1){
-            $(e.target).attr("src", "img/star_50.png");
-        }else if(s == 1){
-            $(e.target).attr("src", "img/star_100.png");
-        }
-        
-    });
-
-    $(".quality-scope-stars > .star").on("click", (e)=>{
-        let list = $(".quality-scope-stars > .star");
-        console.log(list);
-        for(let i = 0; i < list.length; i++){
-            $(".quality-scope-stars > .star").eq(i).attr("src", "img/star_0.png");
-        }
-        let idx = $(".quality-scope-stars > .star").index(e.target);
-        let x = e.offsetX;
-        let w = e.target.offsetWidth;
-        let s = x / w;
-        s = Math.ceil(s * 10)/10;
-        if(idx != 0 ) {
-            for(let i = idx-1; i > -1; i--) {
-                $(".quality-scope-stars > .star").eq(i).attr("src", "img/star_100.png");
-            }
-        }
-        
-        if(s > 0 && s <1){
-            $(e.target).attr("src", "img/star_50.png");
-        }else if(s == 1){
-            $(e.target).attr("src", "img/star_100.png");
-        }
-        
-    });
-
-    $(".kind-scope-stars > .star").on("click", (e)=>{
-        let list = $(".kind-scope-stars > .star");
-        console.log(list);
-        for(let i = 0; i < list.length; i++){
-            $(".kind-scope-stars > .star").eq(i).attr("src", "img/star_0.png");
-        }
-        let idx = $(".kind-scope-stars > .star").index(e.target);
-        let x = e.offsetX;
-        let w = e.target.offsetWidth;
-        let s = x / w;
-        s = Math.ceil(s * 10)/10;
-        if(idx != 0 ) {
-            for(let i = idx-1; i > -1; i--) {
-                $(".kind-scope-stars > .star").eq(i).attr("src", "img/star_100.png");
+               $(list).eq(i).attr("src", "img/star_100.png");
             }
         }
         
