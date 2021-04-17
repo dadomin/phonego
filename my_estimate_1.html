@@ -18,7 +18,7 @@
             <section id="estimate">
                 <div class="my-estimate-title">
                     
-                    <button class="close-btn"><i class="fas fa-bars"></i></button>
+                    <button class="close-btn"><img src="img/menu-bars-white.png" height="16"alt=""></button>
                     <h2>
                         안녕하세요 <br>
                         박민진님.
@@ -27,20 +27,21 @@
                 </div>
 
                 <div class="estimate-list-form">
-                    <ul>
-                        <li class="check">
+                    <div class="estimate-list-form-nav">
+                        <div class="check">
                             <p>수리</p>
                             <div class="estimate-list-now"></div>
-                        </li>
-                        <li>
+                        </div>
+                        <div>
                             <p>구매</p>
                             <div class="estimate-list-now"></div>
-                        </li>
-                        <li>
+                        </div>
+                        <div>
                             <p>판매</p>
                             <div class="estimate-list-now"></div>
-                        </li>
-                    </ul>
+                        </div>
+                        <button id="menu-btn" class="dn"><img src="img/menu-bars.png" alt=""></button>
+                    </div>
                     <div class="estimate-list">
                         <div>
                             <p>2021.01.27 13:45</p>
@@ -74,10 +75,9 @@
                             </div>
                         </div>
                         <div>
-                            <p>2021.01.123 15:40</p>
+                            <p>2021.01.23 15:40</p>
                             <div class="estimate-list-btn">
                                 <span>20210202R001</span>
-                                <div class="new">N</div>
                                 <div class="estimate-list-img">
                                     <img src="img/iphone-xs-max-red.png" alt="">
                                 </div>
@@ -90,10 +90,9 @@
                             </div>
                         </div>
                         <div>
-                            <p>2021.01.123 15:40</p>
+                            <p>2021.01.05 19:21</p>
                             <div class="estimate-list-btn">
                                 <span>20210202R001</span>
-                                <div class="new">N</div>
                                 <div class="estimate-list-img">
                                     <img src="img/iphone-11-pro-white.png" alt="">
                                 </div>
@@ -117,6 +116,26 @@
 </body>
 </html>
 
-<script>
-
+<script> 
+    $(document).ready(function(){
+        menuDisplay();
+    });
+    $(document).scroll(function(){
+        menuDisplay();
+    });
+    function menuDisplay() {
+        var target = $(".my-estimate-title").outerHeight();
+        var currentScrollValue = document.documentElement.scrollTop;
+        if (currentScrollValue >= target) {
+            $(".estimate-list-form-nav").css("position", "fixed");
+            $(".estimate-list-form-nav").css("top", "0");
+            $(".estimate-list").css("margin-top","100px");
+            $(".estimate-list-form-nav > #menu-btn").css("display", "block");
+        }
+        if (currentScrollValue <= target) {
+            $(".estimate-list-form-nav").css("position", "relative");
+            $(".estimate-list").css("margin-top","21px");
+            $(".estimate-list-form-nav > #menu-btn").css("display", "none");
+        }
+    }
 </script>

@@ -109,33 +109,3 @@
 
 </body>
 </html>
-
-<script>
-     $(".star").on("click", (e)=>{
-        let target = e.target.parentNode;
-        let list = $(target).children(".star");
-        console.log(list);
-        for(let i = 0; i < list.length; i++){
-           $(list).eq(i).attr("src", "img/star_0.png");
-        }
-        let idx =$(list).index(e.target);
-        let x = e.offsetX;
-        let w = e.target.offsetWidth;
-        let s = x / w;
-        s = Math.ceil(s * 10)/10;
-        let result = idx + s;
-        if(idx != 0 ) {
-            for(let i = idx-1; i > -1; i--) {
-               $(list).eq(i).attr("src", "img/star_100.png");
-            }
-        }
-        
-        if(s > 0 && s <1){
-            $(e.target).attr("src", "img/star_50.png");
-        }else if(s == 1){
-            $(e.target).attr("src", "img/star_100.png");
-        }
-        
-    });
-
-</script>

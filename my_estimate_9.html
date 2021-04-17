@@ -89,13 +89,13 @@
                         <h2>시간을 선택해주세요</h2>
                         <p>해당 업체에서 방문 상담이 가능한 시간만 표기됩니다.</p>
                         <div class="messenger-time-btns">
-                            <label class="uncheck" for="11">11</label>
-                            <label class="uncheck" for="13">13</label>
-                            <label class="uncheck" for="14">14</label>
-                            <label class="uncheck" for="15">15</label>
-                            <label class="uncheck" for="16">16</label>
-                            <label class="uncheck" for="17">17</label>
-                            <label class="uncheck" for="18">18</label>
+                            <label class="uncheck" for="11">11시</label>
+                            <label class="uncheck" for="13">13시</label>
+                            <label class="uncheck" for="14">14시</label>
+                            <label class="check" for="15">15시</label>
+                            <label class="uncheck" for="16">16시</label>
+                            <label class="uncheck" for="17">17시</label>
+                            <label class="uncheck" for="18">18시</label>
                         </div>
 
                         <input type="radio" name="time" id="11">
@@ -113,24 +113,6 @@
 
         </div>
     </div>
-
-    <script>
-         //제품별 클릭시 체크 
-        $("input[name=time]").on("change", (e)=>{
-            let list = document.getElementsByName("time");
-            let idx = $("input[name=time]").index(e.target);
-            list.forEach((item, n)=>{
-                if (n == idx) {
-                    $(".messenger-time-btns > label").eq(n).removeClass();
-                    $(".messenger-time-btns > label").eq(n).addClass('check');
-                } else {
-                    $(".messenger-time-btns > label").eq(n).removeClass();
-                    $(".messenger-time-btns > label").eq(n).addClass('uncheck');
-                }
-            }); 
-        });
-
-    </script>
 
 </body>
 </html> 
