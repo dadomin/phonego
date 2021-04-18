@@ -1858,8 +1858,11 @@ div.check > .estimate-list-now {
     border: none;
     outline: none;
 }
+.messenger-input-tab > input::placeholder {
+    color: #9f9f9f;
+}
 .messenger-input-tab > button {
-    width: 7%;
+    width: 30px;
     float: right;
 }
 .messenger-input-tab > button > img {
@@ -1993,6 +1996,12 @@ div.check > .estimate-list-now {
 .bubble-btns > button > p {
     font-size: 14px;
     font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bubble > button > p > img {
+    margin-left: 6px;
 }
 .bubble-btn-100 {
     width: 100%;
@@ -2018,7 +2027,7 @@ div.check > .estimate-list-now {
 .messenger-calender {
     width: 100%;
     height: auto;
-    padding: 60px 20px;
+    padding: 80px 20px;
 }
 .messenger-calender > h2 {
     font-size: 18px;
@@ -2050,15 +2059,27 @@ table {
 th {
     color: #9f9f9f;
 }
-th,td {
+th {
     padding: 10px;
+}
+td {
+    padding: 7px;
+}
+td > p {
+    padding: 5px;
 }
 td {
     text-align: center;
     cursor: pointer;
+}
+
+td > p {
+    font-weight: 500;
+    font-size: 14px;
+    color: #333;
     border-radius: 50%;
 }
-td.check {
+td.check > p {
     background-color: #318AF3;
     color: #fff;
 }
@@ -2074,28 +2095,29 @@ td.check {
     margin-bottom: 7px;
 }
 .messenger-time > p {
-    color: #9f9f9f;
-    font-size: 10px;
+    color: #808080;
+    font-size: 11px;
     margin-bottom: 21px;
 }
 .messenger-time-btns {
     width: 100%;
-    height: 45px;
+    height: 43px;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .messenger-time-btns > label {
-    width: 45px;
-    height: 45px;
-    border: 1px solid #C6CCD4;
+    width: 43px;
+    height: 43px;
+    border: 1.3px solid #C6CCD4;
     border-radius: 50%;
-    margin: 0 2px;
+    margin: 0 1.6px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #626262; 
     font-size: 12px;
+    word-break: keep-all;
 }
 .messenger-time-btns > label.check {
     background-color: #318AF3;
