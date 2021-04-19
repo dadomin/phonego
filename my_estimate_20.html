@@ -20,7 +20,7 @@
                 <header>
                     <button id="back-btn" onclick="history.back();"><img src="img/left.png" alt=""></button>
                     <p>phoneGO</p>
-                    <button id="close-btn"><img src="img/exit.png" alt=""></button>
+                    <button id="menu-btn"><img src="img/menu-bars.png" alt=""></button>
                 </header>
        
                <div class="estimate-review-write">
@@ -30,31 +30,31 @@
                         <div class="review-stars-form">
                             <div class="review-scope">
                                 <div class="review-scope-stars">
-                                    <img src="img/star_0.png" alt="star" class="star" id="first_star">
-                                    <img src="img/star_0.png" alt="star" class="star" id="second_star">
-                                    <img src="img/star_0.png" alt="star" class="star" id="third_star">
-                                    <img src="img/star_0.png" alt="star" class="star" id="fourth_star">
-                                    <img src="img/star_0.png" alt="star" class="star" id="fifth_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="first_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="second_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="third_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="fourth_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="fifth_star">
                                 </div>
                                 <p>가격만족도</p>
                             </div>
                             <div class="review-scope">
                                 <div class="review-scope-stars">
-                                    <img src="img/star_0.png" alt="star" class="star" id="first_star">
-                                    <img src="img/star_0.png" alt="star" class="star" id="second_star">
-                                    <img src="img/star_0.png" alt="star" class="star" id="third_star">
-                                    <img src="img/star_0.png" alt="star" class="star" id="fourth_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="first_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="second_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="third_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="fourth_star">
                                     <img src="img/star_0.png" alt="star" class="star" id="fifth_star">
                                 </div>
                                 <p>품질 만족도</p>
                             </div>
                             <div class="review-scope">
                                 <div class="review-scope-stars">
-                                    <img src="img/star_0.png" alt="star" class="star" id="first_star">
-                                    <img src="img/star_0.png" alt="star" class="star" id="second_star">
-                                    <img src="img/star_0.png" alt="star" class="star" id="third_star">
-                                    <img src="img/star_0.png" alt="star" class="star" id="fourth_star">
-                                    <img src="img/star_0.png" alt="star" class="star" id="fifth_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="first_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="second_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="third_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="fourth_star">
+                                    <img src="img/star_100.png" alt="star" class="star" id="fifth_star">
                                 </div>
                                 <p>친절도</p>
                             </div>
@@ -69,19 +69,21 @@
                <div class="review-detail-form">
                     <div class="review-detail-auto">
                         <div><span>업체명</span><p>phoneGO</p></div>
-                        <div><span>제품</span><p>아이폰 11 PRO MAX 블랙</p></div>
-                        <div><span>거래내용</span><p>수정 액정및 터치 문제</p></div>
+                        <div><span>제품</span><p>아이폰 11 PRO MAX <img src="img/dot.png" height="3"width="3" alt=""> 블랙</p></div>
+                        <div><span>거래내용</span><p>수정 <img src="img/dot.png" height="3"width="3" alt=""> 액정및 터치 문제</p></div>
                     </div>
                     <div class="review-detail-amount">
                         <span>최종 거래 금액</span><p>50,000원</p>
                     </div>
-                    <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력해주세요."></textarea>
+                    <textarea name="" id="" cols="30" rows="10" placeholder="내용을 입력해주세요.">전체적으로 만족스럽고 너무 친절했습니다. 다음에도 서비스를 이용하게 된다면 꼭 이분이랑 다시 하고 싶네요 :) 감사합니다. 
+                    </textarea>
                 </div>
                         
 
                 <button id="go-next-estimate" class="agree">
                     <p>완료</p>
                 </button>
+                
                 
                 
             </section>
@@ -99,33 +101,3 @@
 
 </body>
 </html>
-
-<script>
-     $(".star").on("click", (e)=>{
-        let target = e.target.parentNode;
-        let list = $(target).children(".star");
-        console.log(list);
-        for(let i = 0; i < list.length; i++){
-           $(list).eq(i).attr("src", "img/star_0.png");
-        }
-        let idx =$(list).index(e.target);
-        let x = e.offsetX;
-        let w = e.target.offsetWidth;
-        let s = x / w;
-        s = Math.ceil(s * 10)/10;
-        let result = idx + s;
-        if(idx != 0 ) {
-            for(let i = idx-1; i > -1; i--) {
-               $(list).eq(i).attr("src", "img/star_100.png");
-            }
-        }
-        
-        if(s > 0 && s <1){
-            $(e.target).attr("src", "img/star_50.png");
-        }else if(s == 1){
-            $(e.target).attr("src", "img/star_100.png");
-        }
-        
-    });
-
-</script>

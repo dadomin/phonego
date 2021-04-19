@@ -497,7 +497,7 @@ footer > p {
     transform: translate(-50%,-50%);
 }
 .profile-sub {
-    width: 65%;
+    width: 80%;
     display: flex;
     flex-direction: column;
     position: relative;
@@ -649,6 +649,9 @@ img#fifth_star{left:72px;}
     font-weight: 500;
     margin-bottom: 27px;
 }
+#all-agree-btn > p {
+    font-size: 15px;
+}
 #all-agree-btn.disagree,
 .all-agree-btn.disagree {
     border-color:  #dce2eb;;
@@ -674,12 +677,12 @@ img#fifth_star{left:72px;}
 }
 .agree > .all-agree-circle {
     border-color: #318AF3;
-    background-image: url("../img/check-yes-blue.png");
+    background-color: #318AF3;
+    background-image: url("../img/check-yes-white.png");
 }
 .agree-labels {
     width: 100%;
-    margin: 0 auto;
-    margin-bottom: 12px;
+    margin-bottom: 5px !important;
     font-size: 10px;
 }
 .agree-labels > label {
@@ -703,28 +706,33 @@ label {
     background-image: url("../img/check-yes-blue.png");
 }
 .agree-labels > span{
+    font-size: 8px;
     color: #777;
 }
 .agree-labels > a {
     float: right;
 }
-.agree-labels > a > img {
-    height: 14px;
-}
+
 
 #go-next-agree {
-    position: absolute;
-    width: 100%;
-    height: 70px;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    left: 0;
+    position: fixed;
+    width: 360px;
+    height: auto;
+    left: 50%;
     bottom: 0;
+    transform: translateX(-50%);
     background-color: #318AF3;
-    padding: 14px;
     color: #fff;
+    padding: 20px 0 30px 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: flex-start;
+    padding-top: 12px;
+    font-size: 14px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
 }
 #go-next-agree.disagree,
 #go-next-estimate.disagree {
@@ -1268,7 +1276,7 @@ input#img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 7px;
+    margin-bottom: 12px;
     font-size: 12px;
 }
 .request-success-detail > div > div > span,
@@ -1280,6 +1288,7 @@ input#img {
 .request-success-info > div > div > p {
     font-size: 12px;
     color: #333;
+    font-weight: 500;
 }
 .request-success-detail > .detail-txt > div {
     display: block;
@@ -1294,7 +1303,6 @@ input#img {
     border-bottom: 1px dashed #dce2eb;
     margin: 36px auto;
 }
-
 /* estimate */
 #estimate {
     width: 100%;
@@ -1492,11 +1500,12 @@ div.check > .estimate-list-now {
     font-size: 13px;
     padding-left: 10px;
 }
-.black-line {
+.estimate-my-request .black-line {
     width: 100%;
     height: .5px;
     background-color: #9f9f9f;
-}
+    margin: 32px auto;
+}   
 .estimate-my-request > .estimate-cancle {
     padding: 4px 7px;
     background-color: #EDF6FF;
@@ -1528,7 +1537,7 @@ div.check > .estimate-list-now {
 }
 .estimate-my-request > div > div > p {
     font-size: 14px;
-    font-weight: 400;
+    /* font-weight: 500;// */
     color: #333;
     margin-top: 3px;
     line-height: 1.8;
@@ -1701,7 +1710,7 @@ div.check > .estimate-list-now {
     flex-direction: row;
     justify-content: space-between;
     padding-top: 30px;
-    margin-bottom: 50px;
+    /* margin-bottom: 50px; */
 }
 .profile-scope-fields > li {
     text-align: center;
@@ -1727,6 +1736,7 @@ div.check > .estimate-list-now {
     height: auto;
     background: #F7F8FB;
     padding: 10px 20px;
+    margin-top: 50px;
 }
 .my-estimate-msg > div {
     width: 100%;
@@ -1849,7 +1859,7 @@ div.check > .estimate-list-now {
     position: absolute;
     bottom: 0;
     left: 0;
-    padding: 12px 21px;
+    padding: 15px 21px;
 }
 .messenger-input-tab > input {
     width: 90%;
@@ -1862,7 +1872,7 @@ div.check > .estimate-list-now {
     color: #9f9f9f;
 }
 .messenger-input-tab > button {
-    width: 30px;
+    width: 24px;
     float: right;
 }
 .messenger-input-tab > button > img {
@@ -1872,7 +1882,7 @@ div.check > .estimate-list-now {
 .messengers {
     width: 100%;
     height: auto;
-    padding: 30px 20px 120px 50px;
+    padding: 30px 20px 120px 60px;
     margin-top: 110px;
 }
 .messengers > div {
@@ -1902,11 +1912,11 @@ div.check > .estimate-list-now {
 .m-user > .bubble {
     width: auto;
     height: auto;
-    padding: 20px;
+    padding: 14px 18px;
     background-color: #318AF3;
     color: #fff;
-    border-radius: 21px;
-    border-top-right-radius: 5px;
+    border-radius: 19px;
+    border-top-right-radius: 4px;
 }
 .m-user > .bubble > p {
     color: #fff;
@@ -1984,6 +1994,10 @@ div.check > .estimate-list-now {
 .bubble-btns > button.check > img,
 .bubble > button.fail > img {
     display: block;
+}
+.bubble > button.fail > img {
+    width: 11px;
+    margin-right: 12px;
 }
 .bubble > button.check > p,
 .bubble-btns > button.check > p {
@@ -2128,6 +2142,7 @@ td.check > p {
     width: auto;
     height: auto;
     display: flex;
+    margin-left: -45px;
 }
 .m-profile {
     margin-right: 12px;
@@ -2174,17 +2189,27 @@ td.check > p {
     font-size: 21px;
     float: left;
 }
-.estimate-review > select {
+.estimate-review > p {
     float: right;
     background: none;
     border: none;
-
+    margin-top: 8px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
 }
+.estimate-review > p > span {
+    color: #808080;
+    font-size: 12px;
+    margin-right: 4px;
+}
+
 .estimate-review-list {
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 30px 0;
+    padding: 20px 0;
 }
 .reviews {
     background: #FFFFFF;
@@ -2214,9 +2239,28 @@ td.check > p {
     top: 50%;
     transform: translate(-50%, -50%);
 }
+.review-profile > .profile-sub  {
+    position: relative;
+    width: 100%;
+    padding-top: 4px;
+}
+.review-profile > .profile-sub > h3 {
+    font-size: 14px;
+    margin-bottom: 6px;
+}
+.review-profile > .profile-sub > .profile-scope > p {
+    color: #9f9f9f;
+    font-size: 11px;
+}
 .review-profile > .profile-sub > button {
     background-color: #318AF3;
     color: #fff;
+    border-radius: 27px;
+    padding: 5px 14px;
+    font-weight: 400;
+    position:absolute;
+    top: 50%;
+    transform: translateY(-50%);
 }
 .reviews > ul > li > div > img.star {
     width: 15px;
@@ -2226,7 +2270,11 @@ td.check > p {
     padding: 14px 0;
 }
 .reviews > p {
-    margin: 12px 0;
+    margin-top: 6px;
+    margin-bottom: 18px;
+    color: #333;
+    font-size: 13px;
+    line-height: 1.9;
 }
 .review-detail {
     width: 100%;
@@ -2236,13 +2284,17 @@ td.check > p {
 }
 .review-detail > p {
     color: #9f9f9f;
-    border-bottom : 1px solid #9f9f9f;
+    border-bottom : 1px solid #ddd;
+    font-size: 12px;
     padding-bottom: 7px;
     margin-bottom: 7px;
 }
 .review-detail > p > span {
     color: #9f9f9f;
-    margin: 0 4px
+    margin: 0 4px;
+}
+.review-detail > p > span:first-child {
+    margin-left: 0;
 }
 .review-detail > h2 {
     color: #9f9f9f;
@@ -2252,16 +2304,17 @@ td.check > p {
 .review-detail > h2 > span {
     float: right;
     color: #333;
+    font-weight: 500;
 }
 
 .estimate-review-write {
     width: 100%;
     height: auto;
-    padding: 90px 35px 0 35px;
+    padding: 70px 35px 0 35px;
 }
 
 .estimate-review-write > h2 {
-    font-size: 21px;
+    font-size: 25px;
 }
 
 .estimate-review-form {
@@ -2280,14 +2333,17 @@ td.check > p {
     align-items: center;
     padding:12px 0;
 }
+.review-scope > p {
+    font-size: 11px;
+}
 .review-scope-stars {
-    height: 24px;
+    height: 28px;
     width: 180px;
     position: relative;
 }
 .review-scope-stars > img{
     height: 100%;
-    width: 25px;
+    width: 29px;
     cursor: pointer;
     position: absolute;
     top: 0;
@@ -2306,7 +2362,7 @@ td.check > p {
     padding-bottom: 150px;
 }
 .review-detail-form > div {
-    border-bottom: 1px solid #dce2eb;
+    border-bottom: 1px solid #9f9f9f;
 }
 .review-detail-auto {
     width: 100%;
@@ -2321,12 +2377,17 @@ td.check > p {
 .review-detail-auto > div > span {
     color: #9f9f9f;
     font-size: 12px;
-    flex: 2;
+    width: auto;
+    margin-right: 12px;
 }
 .review-detail-auto > div > p {
-    flex: 8;
-    color: #333;
+    color: #000;
     font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+.review-detail-auto > div > p > img {
+    margin: 0 7px
 }
 .review-detail-amount {
     width: 100%;
@@ -2343,7 +2404,7 @@ td.check > p {
     font-size: 13px;
 }
 .review-detail-amount > p {
-    color: #333;
+    color: #000;
     font-size: 13px;
 }
 .review-detail-form > textarea {
@@ -2353,8 +2414,13 @@ td.check > p {
     background: none;
     border: none;
     outline: none;
+    margin: 15px 0;
+    font-size: 13px;
+    line-height: 2;
 }
-
+.review-detail-form > textarea::placeholder {
+    color: #ccc;
+}
 .alert-dialog {
     width: 100%;
     height: 100%;
